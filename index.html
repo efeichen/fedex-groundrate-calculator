@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FedEx Ground Rate Calculator</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+<body>
+  <section class="container">
+    <h1 class="text-center" style="margin:1em 0 1em 0">FedEx Ground Rate</h1>
+    <div class="row col-12">
+      <div class="col-md-6">
+        <form role="form" name="cargoParam" action="#" method="get">
+          <div class="form-group row col-12">
+            <label class="col-4 col-form-label" for="length">Length</label>
+            <input id="length" name="length" type="number" class="form-control col-8" placeholder="cm.">
+          </div>
+          <div class="form-group row col-12">
+            <label class="col-4 col-form-label" for="width">Width</label>
+            <input id="width" name="width" type="number" class="form-control col-8" placeholder="cm.">
+          </div>
+          <div class="form-group row col-12">
+            <label class="col-4 col-form-label" for="height">Height</label>
+            <input id="height" name="height" type="number" class="form-control col-8" placeholder="cm.">
+          </div>
+          <div class="form-group row col-12">
+            <label class="col-4 col-form-label" for="truWeight">Gross Weight</label>
+            <input id="truWeight" name="truWeight" type="number" class="form-control col-8" placeholder="Kg.">
+          </div>
+          <div class="form-group row col-12">
+            <label class="col-4 col-form-label" for="dimFac">Dim Factor</label>
+            <select class="form-control col-8" id="dimFac" name="dimFac" type="number">
+              <option>250</option>
+              <option selected>216</option>
+              <option>200</option>
+              <option>175</option>
+              <option>166</option>
+              <option>139</option>
+              </select>
+          </div>
+          <div class="form-group row col-12">
+            <div class="col-4"></div>
+            <div class="btn-group col-8" style="padding: 0" data-toggle="buttons">
+              <label class="btn btn-primary active col-6">
+                <input type="radio" name="options" id="blended" autocomplete="off" checked >Blended
+              </label>
+              <label class="btn btn-primary col-6">
+                <input type="radio" name="options" id="ca" autocomplete="off">CA Only
+              </label>
+            </div>
+          </div>
+          <div class="row col-12" style="margin-bottom: 5%">
+            <div class="col-4"></div>
+            <button type="button" onclick="formSubmit()" class="btn btn-lg btn-success col-8">Search</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted col-12"><b>FedEx Ground Rate:</b></p>
+        <h2 class="text-success col-12"><b id="rate"></b></h2>
+        <p class="text-muted col-12">Weight from dimensions (lbs.):</p>
+        <h3 class="text-info col-12" id="calcWeight"></h3>
+        <p class="text-muted col-12">Gross Weight (lbs.):</p>
+        <h3 class="text-info col-12" id="truWeightLbs"></h3>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="scripts/fedex.rate-search.js"></script>
+  <script type="text/javascript" src="scripts/fedex.rate-table.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+
+</html>
